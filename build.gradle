@@ -1,0 +1,14 @@
+plugins {
+
+}
+
+group 'com.frozenapuri.minecraftcosmos.architecture'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+}
