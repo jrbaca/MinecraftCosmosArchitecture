@@ -1,24 +1,24 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
-  AWS CloudFormation Sample Template Sample template EIP_With_Association:
+  AWS CloudFormation Template for MinecraftCosmos:
 Resources:
-  StartStopMinecraftAuto:
+  StartStopMinecraft:
     Type: 'AWS::Lambda::Function'
     Properties:
-      FunctionName: StartStopMinecraftAuto
+      FunctionName: StartStopMinecraft
       Handler: StartStopMinecraft.lambda_handler
       Role: !GetAtt
-        - StartStopMinecraftAutoRole
+        - StartStopMinecraftRole
         - Arn
       Code:
         S3Bucket: minecraft-cosmos
-        S3Key: lambda.zip
+        S3Key: lambda/StartStopMinecraft.zip
       Runtime: python3.8
       Timeout: 60
-  StartStopMinecraftAutoRole:
+  StartStopMinecraftRole:
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: StartStopMinecraftAutoRole
+      RoleName: StartStopMinecraftRole
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:

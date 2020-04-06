@@ -3,6 +3,4 @@ script:
   - pip install awscli # install aws cli w/o sudo
   - export PATH=$PATH:$HOME/.local/bin # put aws in the path
   - eval $(aws ecr get-login --no-include-email --region us-west-1) # needs AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY envvars
-  # zip up lambdas
-  # update cloudformation
-  # update lambdas
+  - bash scripts/deploy.sh
