@@ -28,7 +28,7 @@ for i in "$lambdaFolder"/*; do
   if test -f "$i"; then
     filenameAndExtension=${i##*/}                        # strip folders
     filename=${filenameAndExtension%.*}                  # strip extension
-    zip -q $buildRoot/$lambdaFolder/"$filename".zip "$i" # zip file alone
+    zip -q -j $buildRoot/$lambdaFolder/"$filename".zip "$i" # zip file alone
   fi
 done
 echo "Created lambda zips"
