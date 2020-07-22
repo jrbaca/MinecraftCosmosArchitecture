@@ -45,7 +45,8 @@ echo "Uploaded lambdas to S3"
 # Try to update cloudformation
 output=$(aws cloudformation update-stack --stack-name $stackName --template-body file://$stackTemplate --capabilities CAPABILITY_NAMED_IAM)
 
-if [[ $output == *"does not exist"* ]]; then # Stack doesn't exist, need to create it. No need to update lambdas since they haven't been created
+# TODO fix this
+if [[ "$output" == *"does not exist"* ]]; then # Stack doesn't exist, need to create it. No need to update lambdas since they haven't been created
   echo "Stack didn't exist, will create it now"
   aws cloudformation create-stack --stack-name $stackName --template-body file://$stackTemplate --capabilities CAPABILITY_NAMED_IAM
 
